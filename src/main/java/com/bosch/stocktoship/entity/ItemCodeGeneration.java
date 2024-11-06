@@ -29,7 +29,11 @@ public class ItemCodeGeneration {
      this.countryOfOrigin = countryOfOrigin; // Set the country of origin
  }
 
- // Getter method to retrieve the item unique code
+ public ItemCodeGeneration() {
+	// TODO Auto-generated constructor stub
+}
+
+// Getter method to retrieve the item unique code
  public String getItemUniqueCode() {
      return itemUniqueCode;
  }

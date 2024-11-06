@@ -1,17 +1,16 @@
-//CODE WRITTEN BY HARSHAVARDHAN VS
-package com.basics.testing;
+package com.bosch.stocktoship;
+/**
+ * @author MKU1HYD
+ */
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.basics.BOMMain;
-
-import com.basics.InvalidItemCodeException;
-import com.basics.ItemCodeGeneration;
-
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import com.bosch.stocktoship.entity.ItemCodeGeneration;
+import com.bosch.stocktoship.service.BOMMain;
+import com.bosch.stocktoship.service.InvalidItemCodeException;
 public class BOMMainTest {
     private BOMMain bomMain;
     @Before
