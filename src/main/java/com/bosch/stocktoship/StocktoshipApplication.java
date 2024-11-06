@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.bosch.stocktoship.entity.ItemCodeGeneration;
 import com.bosch.stocktoship.service.BOMMain;
+import com.bosch.stocktoship.service.InventoryRequisitionFormService;
 
 
 @SpringBootApplication
@@ -30,6 +31,8 @@ public class StocktoshipApplication {
             // Print any error that occurs during BOM collection or display
             System.out.println("An unexpected error occurred: " + e.getMessage());
         }
+        InventoryRequisitionFormService service = new InventoryRequisitionFormService();
+		service.manageIRF();
 		
 	}
 

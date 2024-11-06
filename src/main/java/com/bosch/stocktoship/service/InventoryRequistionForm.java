@@ -2,7 +2,9 @@ package com.bosch.stocktoship.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * @author WIV1COB
+ */
 public class InventoryRequistionForm {
 
 	public InventoryRequistionForm() {

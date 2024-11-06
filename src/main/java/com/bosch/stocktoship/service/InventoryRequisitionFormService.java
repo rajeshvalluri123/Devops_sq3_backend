@@ -24,7 +24,7 @@ import com.bosch.stocktoship.controller.InvalidItemCodeFormatExcpetion;
 
 public class InventoryRequisitionFormService {
 
-	static List<InventoryRequistionForm> inventoryRequisitionFormList = new ArrayList<InventoryRequistionForm>();
+	public static List<InventoryRequistionForm> inventoryRequisitionFormList = new ArrayList<InventoryRequistionForm>();
 	Map<Integer, List<InventoryRequistionForm>> IRAppriovalMap = new HashMap<Integer, List<InventoryRequistionForm>>();
 
 	public List<InventoryRequistionForm> addItemsToIR() {
