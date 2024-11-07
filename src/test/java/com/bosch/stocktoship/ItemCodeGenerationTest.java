@@ -2,9 +2,10 @@ package com.bosch.stocktoship;
 /**
  * @author MKU1HYD
  */
-import static org.junit.Assert.assertEquals;
 
-import org.aspectj.lang.annotation.Before;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.bosch.stocktoship.entity.ItemCodeGeneration;
@@ -13,7 +14,7 @@ public class ItemCodeGenerationTest {
 
     private ItemCodeGeneration item;
 
-    @Before(value = "")
+    @BeforeEach
     public void setUp() {
         // Initialize a new ItemCodeGeneration object before each test
         item = new ItemCodeGeneration("1234567890", "Electronics", "10x20x30 cm", 

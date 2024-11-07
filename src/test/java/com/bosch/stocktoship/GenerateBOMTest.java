@@ -1,12 +1,13 @@
 package com.bosch.stocktoship;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 /**
  * @author MKU1HYD
  */
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
-import org.junit.Test;
 
 import com.bosch.stocktoship.entity.GenerateBOM;
 
@@ -16,7 +17,7 @@ public class GenerateBOMTest {
 
     private GenerateBOM generateBOM;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // Initialize a GenerateBOM object with test values
         generateBOM = new GenerateBOM("ABC1234567", 50, 1234, 5678);
