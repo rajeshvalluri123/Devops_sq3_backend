@@ -1,15 +1,15 @@
 package com.bosch.stocktoship;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.text.SimpleDateFormat;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import com.bosch.stocktoship.entity.InventoryRequistionForm;
 import com.bosch.stocktoship.service.InventoryRequisitionFormService;
-import com.bosch.stocktoship.service.InventoryRequistionForm;
  /**
   * @author XNE2KOR
   */
@@ -18,7 +18,7 @@ public class InventoryRequisitionFormServiceTest {
     private InventoryRequistionForm inventoryRequisitionForm;
     private InventoryRequisitionFormService inventoryRequisitionFormService;
  
-    @Before
+    @BeforeEach
     public void setUp() {
         // Reset the static serialNo before each test to ensure it starts from 1 each time
         // Initialize a new instance of InventoryRequistionForm before each test

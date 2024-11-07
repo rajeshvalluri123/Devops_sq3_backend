@@ -1,4 +1,4 @@
-package com.bosch.stocktoship.service;
+package com.bosch.stocktoship.entity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

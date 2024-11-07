@@ -1,10 +1,10 @@
-package com.bosch.stocktoship.controller;
+package com.bosch.stocktoship.entity;
 
-public class InvalidItemCodeFormatExcpetion extends Exception{
+/**
+ * @author WIV1COB
+ */
+public class InvalidItemCodeFormatExcpetion extends Exception {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3499262273728055845L;
 
 	public InvalidItemCodeFormatExcpetion(String msg) {

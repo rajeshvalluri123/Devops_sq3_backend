@@ -13,7 +13,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-import com.bosch.stocktoship.controller.InvalidItemCodeFormatExcpetion;
+import com.bosch.stocktoship.entity.InvalidItemCodeFormatExcpetion;
+import com.bosch.stocktoship.entity.InventoryRequistionForm;
 
 /**
  * Service class for Managing Inventory Requisition Form. This class provides
