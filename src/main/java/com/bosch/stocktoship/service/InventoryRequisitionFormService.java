@@ -13,8 +13,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-import com.bosch.stocktoship.entity.InvalidItemCodeFormatExcpetion;
 import com.bosch.stocktoship.entity.InventoryRequistionForm;
+import com.bosch.stocktoship.exception.InvalidItemCodeFormatExcpetion;
 
 /**
  * Service class for Managing Inventory Requisition Form. This class provides
@@ -40,7 +40,7 @@ public class InventoryRequisitionFormService {
 	 * @param stream for taking input from user
 	 */
 	public void takeDataForInventoryRequistionForm(Scanner input) {
-		SimpleDateFormat formatDate = new SimpleDateFormat("dd.mm.yyyy");
+		SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yyyy");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
 		LocalDate inputDate;
 		LocalDate currentDate = LocalDate.now();
@@ -159,8 +159,7 @@ public class InventoryRequisitionFormService {
 	 * form. Also it adds this list into IRAppriovalMap where key is generated
 	 * inventoryRequsitionNumber
 	 */
-	public void manageIRF() {
-		Scanner input = new Scanner(System.in);
+	public void manageIRF(Scanner input) {
 		while (true) {
 			System.out.println("Enter the following details to raise Inventory Requisition");
 			takeDataForInventoryRequistionForm(input);
@@ -215,6 +214,5 @@ public class InventoryRequisitionFormService {
 				System.out.println("Form has been rejected");
 			}
 		}
-		input.close();
 	}
 }

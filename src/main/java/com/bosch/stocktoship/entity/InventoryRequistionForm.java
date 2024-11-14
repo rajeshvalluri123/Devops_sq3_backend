@@ -141,7 +141,7 @@ public class InventoryRequistionForm {
 
 	@Override
 	public String toString() {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		formatter.setLenient(false);
 		return String.format("%-12s%-13s%-17s%-13s%-17s%-13s%-18s%-18s%-15s%-15s", getNum(), getRequisitionerDepartment(),
 				formatter.format(getDateOfRequisition()), getUniqueItemCode(), getItemDescription(), getQuantity(), getUnitOfMeasure(),

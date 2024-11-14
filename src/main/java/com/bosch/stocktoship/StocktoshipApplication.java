@@ -1,9 +1,13 @@
 package com.bosch.stocktoship;
 
+import java.sql.SQLException;
+import java.util.Scanner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.bosch.stocktoship.entity.ItemCodeGeneration;
+import com.bosch.stocktoship.exception.InvalidIntegerException;
+import com.bosch.stocktoship.exception.InvalidItemCodeException;
 import com.bosch.stocktoship.service.BOMMain;
 import com.bosch.stocktoship.service.InventoryRequisitionFormService;
 
@@ -11,29 +15,31 @@ import com.bosch.stocktoship.service.InventoryRequisitionFormService;
 @SpringBootApplication
 public class StocktoshipApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException, InvalidIntegerException, InvalidItemCodeException {
 		SpringApplication.run(StocktoshipApplication.class, args);
-		
-        // Create a BOMMain instance to manage BOM processes
-        BOMMain bomMain = new BOMMain();
-
-        try {
-            // Collect general item details and store them in an ItemCodeGeneration object
-            ItemCodeGeneration item = bomMain.collectItemDetails();
-
-            // Collect specific BOM details (dimensions, quantity, etc.) for the item
-            bomMain.collectBOMDetails(item);
-
-            // Display the collected BOM details in a formatted table
-            bomMain.displayBOMDetails(item);
-
-        } catch (Exception e) {
-            // Print any error that occurs during BOM collection or display
-            System.out.println("An unexpected error occurred: " + e.getMessage());
-        }
-        InventoryRequisitionFormService service = new InventoryRequisitionFormService();
-		service.manageIRF();
-		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Stock Vault");
+		while(true) {
+			System.out.println("\n1. Item code \t2. Inventory Requisition \t3. BOM \t4. Exit");
+			int input = Integer.parseInt(scanner.nextLine());
+			BOMMain bomMain = new BOMMain();
+			if(input == 1) {
+				bomMain.generateItemCode(scanner);
+			}
+			
+			if(input == 2) {				
+				InventoryRequisitionFormService service = new InventoryRequisitionFormService();
+				service.manageIRF(scanner);
+			}
+			
+			if(input == 3) {
+				bomMain.collectBOMDetails(scanner);
+			}
+			
+			if(input == 4) {
+				break;
+			}
+		}
 	}
 
 }
