@@ -1,51 +1,52 @@
 package com.bosch.stocktoship.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-/**
- * @author WIV1COB
- */
-public class InventoryRequistionForm {
 
-	public InventoryRequistionForm() {
-	}
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class InventoryRequistionForm{
 	
-	
-	
-	private String requisitionerDepartment;
-	private Date dateOfRequisition;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	private String requisitionerdepartment;
 	private String uniqueItemCode;
-	private String itemDescription;
 	private int quantity;
-	private String unitOfMeasure;
-	private String purposeOfRequisitions;
-	private String deliveryDepartment;
-	private Date materialRequiredDate;
-	private String notesAndComments;
-	private boolean status;
-
-	public boolean isStatus() {
-		return status;
+	private String purposeofrequistions;
+	private Date materialrequireddate;
+	private Date dateofrequistions;
+    private String itemdescription;
+    private String unitsofmeasure;
+    private String deliverydepartment;
+    private String notesandcomments;
+    
+	@Override
+	public String toString() {
+		return "InventoryRequisition [id=" + id + ", requisitionerdepartment=" + requisitionerdepartment
+				+ ", uniqueItemCode=" + uniqueItemCode + ", quantity=" + quantity + ", purposeofrequistions="
+				+ purposeofrequistions + ", materialrequireddate=" + materialrequireddate + ", dateofrequistions="
+				+ dateofrequistions + ", itemdescription=" + itemdescription + ", unitsofmeasure=" + unitsofmeasure
+				+ ", deliverydepartment=" + deliverydepartment + ", notesandcomments=" + notesandcomments + "]";
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getRequisitionerDepartment() {
-		return requisitionerDepartment;
+	public String getRequisitionerdepartment() {
+		return requisitionerdepartment;
 	}
 
-	public void setRequisitionerDepartment(String requisitionerDepartment) {
-		this.requisitionerDepartment = requisitionerDepartment;
-	}
-
-	public Date getDateOfRequisition() {
-		return dateOfRequisition;
-	}
-
-	public void setDateOfRequisition(Date dateOfRequisition) {
-		this.dateOfRequisition = dateOfRequisition;
+	public void setRequisitionerdepartment(String requisitionerdepartment) {
+		this.requisitionerdepartment = requisitionerdepartment;
 	}
 
 	public String getUniqueItemCode() {
@@ -56,14 +57,6 @@ public class InventoryRequistionForm {
 		this.uniqueItemCode = uniqueItemCode;
 	}
 
-	public String getItemDescription() {
-		return itemDescription;
-	}
-
-	public void setItemDescription(String itemDescription) {
-		this.itemDescription = itemDescription;
-	}
-
 	public int getQuantity() {
 		return quantity;
 	}
@@ -72,70 +65,61 @@ public class InventoryRequistionForm {
 		this.quantity = quantity;
 	}
 
-	public String getUnitOfMeasure() {
-		return unitOfMeasure;
+	public String getPurposeofrequistions() {
+		return purposeofrequistions;
 	}
 
-	public void setUnitOfMeasure(String unitOfMeasure) {
-		this.unitOfMeasure = unitOfMeasure;
+	public void setPurposeofrequistions(String purposeofrequistions) {
+		this.purposeofrequistions = purposeofrequistions;
 	}
 
-	public String getPurposeOfRequisitions() {
-		return purposeOfRequisitions;
+	public Date getMaterialrequireddate() {
+		return materialrequireddate;
 	}
 
-	public void setPurposeOfRequisitions(String purposeOfRequisitions) {
-		this.purposeOfRequisitions = purposeOfRequisitions;
+	public void setMaterialrequireddate(Date materialrequireddate) {
+		this.materialrequireddate = materialrequireddate;
 	}
 
-	public String getDeliveryDepartment() {
-		return deliveryDepartment;
+	public Date getDateofrequistions() {
+		return dateofrequistions;
 	}
 
-	public void setDeliveryDepartment(String deliveryDepartment) {
-		this.deliveryDepartment = deliveryDepartment;
+	public void setDateofrequistions(Date dateofrequistions) {
+		this.dateofrequistions = dateofrequistions;
 	}
 
-	public Date getMaterialRequiredDate() {
-		return materialRequiredDate;
+	public String getItemdescription() {
+		return itemdescription;
 	}
 
-	public void setMaterialRequiredDate(Date materialRequiredDate) {
-		this.materialRequiredDate = materialRequiredDate;
+	public void setItemdescription(String itemdescription) {
+		this.itemdescription = itemdescription;
 	}
 
-	public String getNotesAndComments() {
-		return notesAndComments;
+	public String getUnitsofmeasure() {
+		return unitsofmeasure;
 	}
 
-	public void setNotesAndComments(String notesAndComments) {
-		this.notesAndComments = notesAndComments;
+	public void setUnitsofmeasure(String unitsofmeasure) {
+		this.unitsofmeasure = unitsofmeasure;
 	}
 
-	public InventoryRequistionForm(String requisitionerDepartment, Date dateOfRequisition, String uniqueItemCode,
-			String itemDescription, int quantity, String unitOfMeasure, String purposeOfRequisitions,
-			String deliveryDepartment, Date materialRequiredDate, String notesAndComments, boolean status) {
-		
-		this.requisitionerDepartment = requisitionerDepartment;
-		this.dateOfRequisition = dateOfRequisition;
-		this.uniqueItemCode = uniqueItemCode;
-		this.itemDescription = itemDescription;
-		this.quantity = quantity;
-		this.unitOfMeasure = unitOfMeasure;
-		this.purposeOfRequisitions = purposeOfRequisitions;
-		this.deliveryDepartment = deliveryDepartment;
-		this.materialRequiredDate = materialRequiredDate;
-		this.notesAndComments = notesAndComments;
-		this.status = status;
+	public String getDeliverydepartment() {
+		return deliverydepartment;
 	}
 
-	@Override
-	public String toString() {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-		formatter.setLenient(false);
-		return String.format("%-13s%-17s%-13s%-17s%-13s%-18s%-18s%-15s%-15s", getRequisitionerDepartment(),
-				formatter.format(getDateOfRequisition()), getUniqueItemCode(), getItemDescription(), getQuantity(), getUnitOfMeasure(),
-				getPurposeOfRequisitions(), getDeliveryDepartment(), formatter.format(getMaterialRequiredDate()));
+	public void setDeliverydepartment(String deliverydepartment) {
+		this.deliverydepartment = deliverydepartment;
 	}
+
+	public String getNotesandcomments() {
+		return notesandcomments;
+	}
+
+	public void setNotesandcomments(String notesandcomments) {
+		this.notesandcomments = notesandcomments;
+	}
+
 
 }
