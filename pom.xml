@@ -75,7 +75,7 @@
             	<configuration>
                 	<release>17</release>  <!-- Targeting Java 17 -->
             	</configuration>
-        	</plugin>
+          </plugin>
 		</plugins>
 	</build>
 
